@@ -1,0 +1,47 @@
+#search-field {
+    width: 310px;
+}
+
+.sort {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.sort:before {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    content: '\25b2';
+}
+.sort.sort-down:before {
+    content: '\25bc';
+}
+
+#table td {
+    vertical-align: middle;
+}
+
+.product-name {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    cursor: pointer;
+}
+
+.product-count {
+    display: inline-block;
+    min-width: 30px;
+    height: 30px;
+    background-color: #1b1e21;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+}
+
+.error-field {
+    border: 1px solid #f00;
+}
+.error-field:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, .25)
+}

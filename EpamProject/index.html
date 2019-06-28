@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Table</title>
+	<link rel="stylesheet" href="./bootstrap.min.css">
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<div class="container p-5">
+		<div class="clearfix">
+			<div class="float-left form-inline">
+				<input type="text" id="search-field" class="form-control" placeholder="Фильтр по подстроке в имени товара">
+				<button class="btn btn-secondary ml-3" id="search-button">Search</button>
+			</div>
+			<div class="float-right">
+				<button class="btn btn-secondary" id="add-button">Add New</button>
+			</div>
+		</div>
+		<table class="table table-bordered mt-4" id="table">
+			<thead>
+				<tr class="text-center">
+					<th>
+						Name
+						<span class="text-right sort float-right" data-sort-param="name"></span>
+					</th>
+					<th>
+						Price
+						<span class="text-right sort float-right" data-sort-param="price"></span>
+					</th>
+					<th>
+						Actions
+					</th>
+				</tr>
+				<!-- <шаблон строки таблицы> -->
+				<tr id="template-row" class="d-none">
+					<td>
+						<span class="float-left product-name edit-button text-info"></span>
+						<span class="float-right product-count"></span>
+					</td>
+					<td class="text-center"></td>
+					<td>
+						<div class="row">
+							<div class="col">
+								<button class="btn btn-info w-100 text-center edit-button">Edit</button>
+							</div>
+							<div class="col">
+								<button class="btn btn-danger w-100 text-center delete-button">Delete</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<!-- </шаблон строки таблицы> -->
+			</thead>
+			<tbody></tbody>
+		</table>
+		<form class="row align-items-end" id="form">
+			<div class="col">
+				<label for="name-field">
+					Name:
+					<span class="text-danger">* Required field</span>
+				</label>
+				<input type="text" id="name-field" class="form-control" maxlength="15" required>
+			</div>
+			<div class="col">
+				<label for="count-field">
+					Count:
+				</label>
+				<input type="number" step="1" min="0" id="count-field" class="form-control">
+			</div>
+			<div class="col">
+				<label for="price-field">
+					Price:
+				</label>
+				<input type="text" min="0" step="0.01" id="price-field" class="form-control">
+			</div>
+			<div class="col">
+				<button type="submit" class="btn btn-primary w-100" id="add-update-button">Add</button>
+			</div>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		// если браузер IE или EDGE, подключаем полифиллы
+		if (/MSIE 10/i.test(navigator.userAgent) || /MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent) || /Edge\/\d./i.test(navigator.userAgent)) {
+			document.write('<script src="./polyfill.min.js"><\/script>');
+		}
+	</script>
+	<script defer src="./main.js"></script>
+</body>
+</html>
